@@ -1,0 +1,23 @@
+{
+  "name": "@chimeranext/tokens",
+  "version": "0.1.0",
+  "description": "Canonical ChimeraNext design tokens — Style Dictionary pipeline producing themed CSS variables, a Tailwind preset, a JS token export, and Dart constants.",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "main": "build/tokens.js",
+  "exports": {
+    ".": "./build/tokens.js",
+    "./css": "./build/css/variables.css",
+    "./preset": "./build/tailwind-preset.js",
+    "./dart": "./build/dart/chimera_tokens.dart"
+  },
+  "files": ["build", "tokens.json", "build.mjs"],
+  "scripts": {
+    "build": "node build.mjs",
+    "clean": "rm -rf build"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.3.0"
+  }
+}
