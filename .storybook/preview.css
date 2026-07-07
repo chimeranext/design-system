@@ -1,0 +1,19 @@
+/* Order matters: all @import first, then Tailwind layers.
+   Tokens define the CSS custom properties (dark :root + .light); the UI base
+   layer adds terminal/hero utilities; fontsource loads the brand typefaces. */
+@import "@chimeranext/tokens/css";
+@import "@chimeranext/ui/styles.css";
+@import "@fontsource-variable/sora";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Storybook canvas inherits the token surface. */
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-body), "Inter Variable", Inter, system-ui, sans-serif;
+}

@@ -1,0 +1,57 @@
+/* @chimeranext/ui base layer — utility classes the components rely on.
+   Import once in the app root (or Storybook preview) AFTER Tailwind and after
+   @chimeranext/tokens/css (which defines --gradient-brand, --primary, etc.). */
+
+/* Terminal surfaces stay dark and legible regardless of the section surface,
+   so a terminal inside a .light section does not invert. */
+.terminal-dark {
+  background-color: #0b0912;
+  color: #ece8f2;
+}
+.terminal-dark code {
+  color: #ece8f2;
+}
+
+/* Hero: staggered install lines + blinking caret. */
+@keyframes chimera-fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+.hero-line {
+  opacity: 0;
+  animation: chimera-fade-up 0.45s ease-out forwards;
+}
+@keyframes chimera-caret-blink {
+  50% { opacity: 0; }
+}
+.caret::after {
+  content: "▋";
+  margin-left: 3px;
+  color: hsl(var(--primary));
+  animation: chimera-caret-blink 1.1s steps(1) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-line { animation: none; opacity: 1; }
+  .caret::after { animation: none; }
+}
+
+/* Brand gradient text helper (uses the generated --gradient-brand token). */
+.text-gradient {
+  background-image: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Small pill. */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--muted));
+  padding: 0.125rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: hsl(var(--muted-foreground));
+}
