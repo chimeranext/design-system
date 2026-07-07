@@ -1,0 +1,40 @@
+{
+  "name": "@chimeranext/design-system",
+  "version": "0.1.0",
+  "description": "Consolidated ChimeraNext design system — canonical tokens, React UI library, and Storybook (storybook.chimeranext.dev).",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "build:tokens": "npm run build --workspace @chimeranext/tokens",
+    "typecheck": "npm run typecheck --workspace @chimeranext/ui",
+    "storybook": "npm run build:tokens && storybook dev -p 6006",
+    "build-storybook": "npm run build:tokens && storybook build",
+    "build": "npm run build-storybook",
+    "smoke": "python3 -m http.server 8080 --directory storybook-static"
+  },
+  "devDependencies": {
+    "@chimeranext/tokens": "*",
+    "@chimeranext/ui": "*",
+    "@fontsource-variable/inter": "^5.1.0",
+    "@fontsource-variable/jetbrains-mono": "^5.1.1",
+    "@fontsource-variable/sora": "^5.1.0",
+    "@storybook/addon-essentials": "^8",
+    "@storybook/blocks": "^8",
+    "@storybook/react": "^8",
+    "@storybook/react-vite": "^8",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "storybook": "^8",
+    "tailwindcss": "^3.4.17",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}

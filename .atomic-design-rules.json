@@ -1,0 +1,12 @@
+{
+  "pillars": ["platform"],
+  "atomicLevels": ["foundations", "atoms", "molecules", "organisms", "templates"],
+  "storyTitleRule": {
+    "enabled": true,
+    "pattern": "<Pillar>/<AtomicLevel>/<Component>",
+    "componentsRoot": "packages/ui/src",
+    "pillar": "Platform",
+    "exemptionMarker": "@atomic-exempt:",
+    "enforceOn": ["Write"]
+  }
+}
