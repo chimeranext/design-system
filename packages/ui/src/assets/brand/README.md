@@ -7,6 +7,6 @@
 Consumers (academy, website) copy these bytes until the `@chimeranext/ui` package
 publishes an asset pipeline. Never re-draw or re-export from raster.
 
-> Drift note: `packages/tokens/tokens.json` still holds the legacy neon identity
-> (`#7C5CFF` + Sora/Inter). Re-tokenizing to ink/gold + Alegreya needs a
-> governance decision — see open questions.
+> Identity note: `packages/tokens/tokens.json` holds the Academy D&D identity
+> (ink/gold + Alegreya, since d5aa27c) — the `#7C5CFF` arcane hue above is now
+> the tertiary magic accent, not the primary. Gold `#B78E3B` is the sole CTA metal.

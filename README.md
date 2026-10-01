@@ -19,10 +19,12 @@ ships the source of truth.
 
 ### Tokens
 
-`packages/tokens/tokens.json` is the **single source of truth**: the full brand palette
-(dark default + re-tuned light theme, 36 semantic vars), brand raw hues
-(`#7C5CFF / #3B82F6 / #22D3EE / #EC4899`), the brand gradient, fonts (Sora / Inter /
-JetBrains Mono), radii (10 / 8 / 6px), and the 6 bento accents in light + dark variants.
+`packages/tokens/tokens.json` is the **single source of truth**: the Academy D&D
+identity (dark default + quest-scroll light theme) — antique gold `#B78E3B` primary,
+ink navy `#142A46`, arcane `#7C5CFF`, charm `#EC4899`, parchment `#F2EAD8`, blood /
+frost / mana accents, the gold gradient, fonts (Alegreya / Piazzolla /
+Alegreya Sans / Inconsolata), radii (10 / 8 / 6px), and the 6 bento accents in
+light + dark variants.
 Everything under `packages/tokens/build/` is **generated** — never hand-edited:
 
 ```

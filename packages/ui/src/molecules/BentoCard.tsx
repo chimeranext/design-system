@@ -7,7 +7,7 @@ export interface BentoCardProps {
   items: string[];
   /**
    * Accent color as a raw value (hex or CSS color). Pass a token from the
-   * build — e.g. `tokens.bento.dark[0]` / `tokens.bento.light[0]`. The
+   * build — e.g. `tokens.bento.dark["1"]` / `tokens.bento.light["1"]`. The
    * component never hardcodes a palette.
    */
   accent: string;
@@ -23,7 +23,7 @@ export function BentoCard({ label, items, accent, className }: BentoCardProps) {
       style={{ borderColor: `${accent}55`, boxShadow: `inset 0 3px 0 0 ${accent}` }}
     >
       <div className="flex items-baseline justify-between gap-2">
-        <h4 className="font-heading text-sm font-bold" style={{ color: accent }}>{label}</h4>
+        <h4 className="font-display text-sm font-bold" style={{ color: accent }}>{label}</h4>
         <span
           className="rounded-full px-2 py-0.5 font-mono text-[10px] font-semibold"
           style={{ backgroundColor: `${accent}1f`, color: accent }}

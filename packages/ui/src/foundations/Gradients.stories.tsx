@@ -23,7 +23,7 @@ export const Brand: Story = {
       </div>
       <div
         style={{
-          fontFamily: "var(--font-heading)",
+          fontFamily: "var(--font-display)",
           fontWeight: 800,
           fontSize: 48,
           backgroundImage: tokens.gradient.brand,

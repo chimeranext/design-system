@@ -8,8 +8,10 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj;
 
+// Token role → the CSS var the build emits for it (see variables.css).
 const cssVar: Record<string, string> = {
-  heading: "var(--font-heading)",
+  display: "var(--font-display)",
+  epic: "var(--font-epic)",
   body: "var(--font-body)",
   mono: "var(--font-mono)",
 };
@@ -34,18 +36,56 @@ export const Families: Story = {
   ),
 };
 
+// Academy type scale (DESIGN.md): H1 Alegreya 800, H2 Piazzolla 600,
+// H3 Piazzolla 400 all-caps, body Alegreya Sans, code Inconsolata.
+const SCALE: { label: string; style: React.CSSProperties }[] = [
+  {
+    label: "H1 / Alegreya 800 / 3rem",
+    style: { fontFamily: tokens.font.display, fontSize: "3rem", fontWeight: 800, lineHeight: 1.1 },
+  },
+  {
+    label: "H2 / Piazzolla 600 / 1.75rem",
+    style: { fontFamily: tokens.font.epic, fontSize: "1.75rem", fontWeight: 600, lineHeight: 1.2 },
+  },
+  {
+    label: "H3 / Piazzolla 400 all-caps / 1rem +0.12em",
+    style: {
+      fontFamily: tokens.font.epic,
+      fontSize: "1rem",
+      fontWeight: 400,
+      letterSpacing: "0.12em",
+      textTransform: "uppercase",
+    },
+  },
+  {
+    label: "Body / Alegreya Sans 400 / 1rem",
+    style: { fontFamily: tokens.font.body, fontSize: "1rem", fontWeight: 400 },
+  },
+  {
+    label: "Label caps / Alegreya Sans 700 / 0.75rem +0.08em",
+    style: {
+      fontFamily: tokens.font.body,
+      fontSize: "0.75rem",
+      fontWeight: 700,
+      letterSpacing: "0.08em",
+      textTransform: "uppercase",
+    },
+  },
+  {
+    label: "Code / Inconsolata 400 / 0.875rem",
+    style: { fontFamily: tokens.font.mono, fontSize: "0.875rem", fontWeight: 400 },
+  },
+];
+
 export const Scale: Story = {
   render: () => (
-    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-      {[
-        ["H1 / clamp", "clamp(2.1rem,1rem+3vw,4.75rem)"],
-        ["H2 / clamp", "clamp(1.75rem,1.1rem+1.7vw,3.25rem)"],
-        ["Body", "1.125rem"],
-        ["Small", "0.875rem"],
-        ["Mono / caption", "0.75rem"],
-      ].map(([label, size]) => (
-        <div key={label} style={{ fontFamily: "var(--font-heading)", fontSize: size, color: "hsl(var(--foreground))" }}>
-          {label} — {size}
+    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      {SCALE.map(({ label, style }) => (
+        <div key={label}>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "hsl(var(--muted-foreground))", marginBottom: 4 }}>
+            {label}
+          </div>
+          <div style={{ ...style, color: "hsl(var(--foreground))" }}>Operate like a studio.</div>
         </div>
       ))}
     </div>
