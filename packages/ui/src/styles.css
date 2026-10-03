@@ -3,13 +3,14 @@
    @chimeranext/tokens/css (which defines --gradient-brand, --primary, etc.). */
 
 /* Terminal surfaces stay dark and legible regardless of the section surface,
-   so a terminal inside a .light section does not invert. */
+   so a terminal inside a .light section does not invert. Ink + parchment are
+   the code-block pair from DESIGN.md (= semantic.dark.background/foreground). */
 .terminal-dark {
-  background-color: #0b0912;
-  color: #ece8f2;
+  background-color: #0B1526;
+  color: #F2EAD8;
 }
 .terminal-dark code {
-  color: #ece8f2;
+  color: #F2EAD8;
 }
 
 /* Hero: staggered install lines + blinking caret. */

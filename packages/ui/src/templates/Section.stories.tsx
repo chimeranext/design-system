@@ -12,7 +12,7 @@ type Story = StoryObj<typeof Section>;
 
 const Demo = (
   <div style={{ textAlign: "center" }}>
-    <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: 40, color: "hsl(var(--foreground))" }}>
+    <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 40, color: "hsl(var(--foreground))" }}>
       From zero to operating system
     </h2>
     <p style={{ marginTop: 12, color: "hsl(var(--muted-foreground))" }}>

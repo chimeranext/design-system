@@ -30,7 +30,7 @@ export function WindowCard({ title, badge, meta, children, className }: WindowCa
         )}
       </div>
       {children ?? (
-        <div className="px-3 py-2.5 font-heading text-sm font-bold text-card-foreground">{title}</div>
+        <div className="px-3 py-2.5 font-display text-sm font-bold text-card-foreground">{title}</div>
       )}
     </div>
   );

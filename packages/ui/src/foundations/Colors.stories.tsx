@@ -39,7 +39,7 @@ function Grid({ children }: { children: React.ReactNode }) {
 
 function H({ children }: { children: React.ReactNode }) {
   return (
-    <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, margin: "28px 0 12px", color: "hsl(var(--foreground))" }}>
+    <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, margin: "28px 0 12px", color: "hsl(var(--foreground))" }}>
       {children}
     </h3>
   );
@@ -51,13 +51,13 @@ export const Semantic: Story = {
       <H>Semantic — dark ({Object.keys(tokens.semantic.dark).length} tokens)</H>
       <Grid>
         {Object.entries(tokens.semantic.dark).map(([k, v]) => (
-          <Swatch key={k} name={`--${k}`} css={`hsl(${v})`} />
+          <Swatch key={k} name={`--${k}`} css={v} />
         ))}
       </Grid>
       <H>Semantic — light ({Object.keys(tokens.semantic.light).length} tokens)</H>
       <Grid>
         {Object.entries(tokens.semantic.light).map(([k, v]) => (
-          <Swatch key={k} name={`--${k}`} css={`hsl(${v})`} />
+          <Swatch key={k} name={`--${k}`} css={v} />
         ))}
       </Grid>
     </div>

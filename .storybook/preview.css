@@ -3,9 +3,11 @@
    layer adds terminal/hero utilities; fontsource loads the brand typefaces. */
 @import "@chimeranext/tokens/css";
 @import "@chimeranext/ui/styles.css";
-@import "@fontsource-variable/sora";
-@import "@fontsource-variable/inter";
-@import "@fontsource-variable/jetbrains-mono";
+@import "@fontsource-variable/alegreya";
+@import "@fontsource-variable/piazzolla";
+@import "@fontsource/alegreya-sans/400.css";
+@import "@fontsource/alegreya-sans/700.css";
+@import "@fontsource-variable/inconsolata";
 
 @tailwind base;
 @tailwind components;
@@ -15,5 +17,5 @@
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
-  font-family: var(--font-body), "Inter Variable", Inter, system-ui, sans-serif;
+  font-family: var(--font-body), "Alegreya Sans", system-ui, sans-serif;
 }
